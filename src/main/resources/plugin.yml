@@ -1,0 +1,17 @@
+name: Hunter
+version: 1.0.0
+main: me.mohit.hunter.HunterPlugin
+api-version: '1.21'
+author: Mohit
+description: Hunter Homing Missile System
+
+commands:
+  hunter:
+    description: Gives a Hunter weapon
+    usage: /hunter
+    permission: hunter.admin
+
+permissions:
+  hunter.admin:
+    description: Allows use of the Hunter admin command
+    default: op
