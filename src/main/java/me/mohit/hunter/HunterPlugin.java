@@ -126,7 +126,7 @@ public final class HunterPlugin extends JavaPlugin implements Listener, CommandE
     private void forceTotemOrKill(LivingEntity le){
         ItemStack main=le.getEquipment()==null?null:le.getEquipment().getItemInMainHand(), off=le.getEquipment()==null?null:le.getEquipment().getItemInOffHand();
         boolean hasMain=main!=null&&main.getType()==Material.TOTEM_OF_UNDYING, hasOff=off!=null&&off.getType()==Material.TOTEM_OF_UNDYING;
-        if(hasMain||hasOff){ ItemStack it=hasMain?main:off; it.setAmount(it.getAmount()-1); le.setHealth(Math.min(1.0,le.getMaxHealth())); le.setFireTicks(0); le.getWorld().playEffect(le.getLocation(),Effect.TOTEM_RESURRECT,0); }
+        if(hasMain||hasOff){ ItemStack it=hasMain?main:off; it.setAmount(it.getAmount()-1); le.setHealth(Math.min(1.0,le.getMaxHealth())); le.setFireTicks(0); le.getWorld().playEffect(le.getLocation(),Effect.TOTEM_USED,0); }
         else le.setHealth(0);
     }
     private void finish(Shot s,boolean ok,String reason){
